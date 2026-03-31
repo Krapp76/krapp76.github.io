@@ -17,7 +17,6 @@
             <a href="index.html" class="back-link">← Вернуться на главную</a>
         </div>
     </div>
-
     <div class="toc-section">
         <div class="container">
             <ul>
@@ -34,8 +33,6 @@
     </div>
 
     <div class="container-content">
-        
-        <!-- ВВЕДЕНИЕ -->
         <div id="intro" class="section-block">
             <h2 class="section-title">Введение: Особый склад ума C++</h2>
             <div class="info-card">
@@ -43,12 +40,12 @@
                 <p class="mt-3"><strong>Главная мысль:</strong> C++ не умирает — он эволюционирует через сложный процесс стандартизации, используется везде — от игровых движков до операционных систем, и его экосистема богаче, чем когда-либо.</p>
                 <p class="mt-3"><em>"Доклад с одной стороны лёгкий, с другой стороны рассказывает простые, но не очевидные вещи. Будет весело и полезно."</em> — Егор Суворов</p>
             </div>
-            <div class="image-placeholder">
-                <p>[МЕСТО ДЛЯ КАРТИНКИ] Антон Соснин выступает на C++ Russia — вставьте фото здесь</p>
+            <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+            <div class="image-placeholder" data-image-slot="intro">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Антон Соснин выступает на C++ Russia — вставьте ссылку на фото в атрибут src тега img ниже</p>
+                <img src="" alt="Антон Соснин на C++ Russia" class="placeholder-img" style="max-width: 100%; display: none;">
             </div>
         </div>
-
-        <!-- ГДЕ НУЖЕН C++ -->
         <div id="where-cpp" class="section-block">
             <h2 class="section-title">Где же нужен C++?</h2>
             <div class="info-card">
@@ -76,12 +73,12 @@ private:
     OrderBook order_book_;
 };</pre>
             </div>
-            <div class="image-placeholder">
-                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Где используется C++" — логотипы браузеров, игровые движки, терминалы трейдинга</p>
+            <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+            <div class="image-placeholder" data-image-slot="where">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Где используется C++" — логотипы браузеров, игровые движки, терминалы трейдинга — вставьте ссылку на картинку</p>
+                <img src="" alt="Мем про использование C++" class="placeholder-img" style="max-width: 100%; display: none;">
             </div>
         </div>
-
-        <!-- СТАНДАРТ ЯЗЫКА -->
         <div id="standard" class="section-block">
             <h2 class="section-title">Стандарт C++: 1800-страничный зверь</h2>
             <div class="info-card">
@@ -108,12 +105,12 @@ struct is_pointer&lt;T*&gt; : std::true_type {};
 static_assert(is_pointer&lt;int*&gt;::value);     // true
 static_assert(!is_pointer&lt;int&gt;::value);    // false</pre>
             </div>
-            <div class="image-placeholder">
-                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Заседание комитета по стандартизации C++" — люди спорят над бумагами</p>
+            <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+            <div class="image-placeholder" data-image-slot="standard">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Заседание комитета по стандартизации C++" — люди спорят над бумагами — вставьте ссылку на картинку</p>
+                <img src="" alt="Комитет по стандартизации C++" class="placeholder-img" style="max-width: 100%; display: none;">
             </div>
         </div>
-
-        <!-- НЕОПРЕДЕЛЁННОЕ ПОВЕДЕНИЕ -->
         <div id="ub" class="section-block">
             <h2 class="section-title">Неопределённое поведение: Тёмное искусство</h2>
             <div class="info-card">
@@ -143,12 +140,12 @@ int add_checked(int a, int b) {
     return a + b;
 }</pre>
             </div>
-            <div class="image-placeholder">
-                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "C++ программисты и неопределённое поведение" — указывают на чёрную дыру</p>
+            <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+            <div class="image-placeholder" data-image-slot="ub">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "C++ программисты и неопределённое поведение" — указывают на чёрную дыру — вставьте ссылку на картинку</p>
+                <img src="" alt="Неопределённое поведение C++" class="placeholder-img" style="max-width: 100%; display: none;">
             </div>
         </div>
-
-        <!-- ПАМЯТЬ И УКАЗАТЕЛИ -->
         <div id="memory" class="section-block">
             <h2 class="section-title">Память: Где указатели указывают на звёзды</h2>
             <div class="info-card">
@@ -173,12 +170,12 @@ int* create_array(size_t size) {
 auto safe_array = std::make_unique&lt;int[]&gt;(100);
 // Освобождается автоматически</pre>
             </div>
-            <div class="image-placeholder">
-                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Указатели C++" — три звёздочки (***) как созвездие в лигатурном шрифте</p>
+            <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+            <div class="image-placeholder" data-image-slot="memory">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Указатели C++" — три звёздочки (***) как созвездие — вставьте ссылку на картинку</p>
+                <img src="" alt="Указатели C++" class="placeholder-img" style="max-width: 100%; display: none;">
             </div>
         </div>
-
-        <!-- ЭКОСИСТЕМА И ИНСТРУМЕНТЫ -->
         <div id="ecosystem" class="section-block">
             <h2 class="section-title">Экосистема C++: Компиляторы, сборка, пакетные менеджеры</h2>
             <div class="info-card">
@@ -203,12 +200,12 @@ find_package(OpenSSL REQUIRED)
 add_executable(my_app main.cpp)
 target_link_libraries(my_app fmt::fmt OpenSSL::SSL)</pre>
             </div>
-            <div class="image-placeholder">
-                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Сложность CMake" — спагетти из зависимостей</p>
+            <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+            <div class="image-placeholder" data-image-slot="ecosystem">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Сложность CMake" — спагетти из зависимостей — вставьте ссылку на картинку</p>
+                <img src="" alt="Сложность CMake" class="placeholder-img" style="max-width: 100%; display: none;">
             </div>
         </div>
-
-        <!-- БИБЛИОТЕКИ И ФРЕЙМВОРКИ -->
         <div id="libraries" class="section-block">
             <h2 class="section-title">Важные библиотеки C++</h2>
             <div class="info-card">
@@ -242,12 +239,12 @@ int main() {
     sqlite3_close(db);
 }</pre>
             </div>
-            <div class="image-placeholder">
-                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Как произносить Qt?" — дебаты о произношении</p>
+            <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+            <div class="image-placeholder" data-image-slot="libraries">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Как произносить Qt?" — дебаты о произношении — вставьте ссылку на картинку</p>
+                <img src="" alt="Qt произношение" class="placeholder-img" style="max-width: 100%; display: none;">
             </div>
         </div>
-
-        <!-- БЛОК С ССЫЛКОЙ НА ВИДЕО -->
         <div id="video" class="video-link-block">
             <h2 class="section-title">Видео доклада</h2>
             <div class="video-link">
@@ -256,7 +253,6 @@ int main() {
                 </a>
             </div>
         </div>
-
     </div>
 </body>
 </html>
