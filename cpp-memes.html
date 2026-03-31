@@ -77,17 +77,6 @@
                 <p class="mt-2">В России можно обратиться к <strong>Антону Полухину</strong> за помощью с предложениями в стандарт.</p>
             </div>
             <div class="code-block">
-                <pre>
-// Сложность стандарта: метапрограммирование на шаблонах
-template&lt;typename T&gt;
-struct is_pointer : std::false_type {};
-
-template&lt;typename T&gt;
-struct is_pointer&lt;T*&gt; : std::true_type {};
-
-// Использование
-static_assert(is_pointer&lt;int*&gt;::value);     // true
-static_assert(!is_pointer&lt;int&gt;::value);    // false</pre>
             </div>
             <div class="image-placeholder">
                 <img src="img/Снимок экрана 2026-03-31 230704.jpg" alt="Комитет стандартизации C++" class="placeholder-img">
@@ -106,22 +95,6 @@ static_assert(!is_pointer&lt;int&gt;::value);    // false</pre>
                 </ul>
             </div>
             <div class="code-block">
-                <pre>
-// Классическое UB: переполнение знакового целого
-int add(int a, int b) {
-    // Если a + b превышает INT_MAX, поведение не определено
-    return a + b;
-}
-
-// Лучше: задокументировать контракт
-/// @brief Складывает два целых числа
-/// @pre a + b не должно вызывать переполнение
-/// @behavior не определено при переполнении
-int add_checked(int a, int b) {
-    assert(a <= INT_MAX - b);
-    return a + b;
-}</pre>
-            </div>
             <div class="image-placeholder">
                 <img src="img/Снимок экрана 2026-03-31 230913.jpg" alt="Мем про C++ и исключения" class="placeholder-img">
             </div>
@@ -138,17 +111,6 @@ int add_checked(int a, int b) {
                 <p class="mt-3"><em>"Раньше учили C++ за 21 день. Теперь предлагают учить за 100 секунд!"</em> — сатира на обещания быстрого обучения.</p>
             </div>
             <div class="code-block">
-                <pre>
-// Сырые указатели: сила с ответственностью
-int* create_array(size_t size) {
-    int* arr = new int[size];  // Ручное выделение
-    // Не забудьте delete[] потом!
-    return arr;
-}
-
-// Современный C++: умные указатели
-auto safe_array = std::make_unique&lt;int[]&gt;(100);
-// Освобождается автоматически</pre>
             </div>
             <div class="image-placeholder">
                 <img src="img/Снимок экрана 2026-03-31 231143.jpg" alt="C++ vs Java исключения" class="placeholder-img">
@@ -164,19 +126,6 @@ auto safe_array = std::make_unique&lt;int[]&gt;(100);
                 <p class="mt-3"><em>"Если вы до сих пор не написали свой пакетный менеджер — напишите, там делов-то на два выходных!"</em> (шутка, но с долей правды)</p>
             </div>
             <div class="code-block">
-                <pre>
-# CMakeLists.txt пример
-cmake_minimum_required(VERSION 3.20)
-project(MyApp LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-find_package(fmt REQUIRED)
-find_package(OpenSSL REQUIRED)
-
-add_executable(my_app main.cpp)
-target_link_libraries(my_app fmt::fmt OpenSSL::SSL)</pre>
             </div>
             <div class="image-placeholder">
                 <img src="img/Снимок экрана 2026-03-31 231557.jpg" alt="CMake builds character" class="placeholder-img">
@@ -197,23 +146,6 @@ target_link_libraries(my_app fmt::fmt OpenSSL::SSL)</pre>
                 <p class="mt-3"><em>"Awesome C++" на GitHub — отличный репозиторий с библиотеками. Можете добавить туда свою!</em></p>
             </div>
             <div class="code-block">
-                <pre>
-// Использование SQLite для анализа данных
-#include &lt;sqlite3.h&gt;
-#include &lt;iostream&gt;
-
-int main() {
-    sqlite3* db;
-    sqlite3_open("data.db", &db);
-    
-    const char* sql = "SELECT name, value FROM metrics ORDER BY value DESC LIMIT 10";
-    sqlite3_exec(db, sql, [](void*, int, char** data, char**) -> int {
-        std::cout &lt;&lt; data[0] &lt;&lt; ": " &lt;&lt; data[1] &lt;&lt; '\n';
-        return 0;
-    }, nullptr, nullptr);
-    
-    sqlite3_close(db);
-}</pre>
             </div>
             <div class="image-placeholder">
                 <img src="img/Снимок экрана 2026-03-31 231913.jpg" alt="Мем про сложность C++" class="placeholder-img">
