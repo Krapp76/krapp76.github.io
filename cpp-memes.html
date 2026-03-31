@@ -58,18 +58,6 @@
                 <p class="mt-3"><em>"Все браузеры написаны на C++"</em> — Firefox, Chrome, все основные движки.</p>
             </div>
             <div class="code-block">
-                <pre>
-// Пример высокопроизводительного трейдингового движка
-class TradingEngine {
-public:
-    void process_order(const Order&amp; order) noexcept {
-        // Микросекунды имеют значение — прямой доступ к памяти
-        auto* slot = order_book_.find(order.symbol);
-        if (slot) slot->execute(order);
-    }
-private:
-    OrderBook order_book_;
-};</pre>
             </div>
             <div class="image-placeholder">
                 <img src="img/Снимок экрана 2026-03-31 230458.jpg" alt="Мем: браузеры написаны на C++" class="placeholder-img">
