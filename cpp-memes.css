@@ -96,25 +96,6 @@ body {
     padding-left: 0;
     border-left: none;
 }
-.code-block {
-    background: #1e1e1e;
-    color: #d4d4d4;
-    padding: 20px;
-    border-radius: 12px;
-    overflow-x: auto;
-    font-family: "Courier New", monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 20px 0;
-    border-left: none;
-}
-
-.code-block pre {
-    margin: 0;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
 .info-card {
     background: white;
     border-radius: 20px;
@@ -193,12 +174,7 @@ body {
     .container-content {
         padding: 30px 15px 40px 15px;
     }
-    
-    .code-block {
-        font-size: 12px;
-        padding: 15px;
-    }
-    
+   
     .section-block {
         scroll-margin-top: 120px;
     }
