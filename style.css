@@ -141,14 +141,6 @@ body {
   padding: 1.8rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
-
-.footer-custom {
-  background: midnightblue;
-  color: lightgray;
-  padding: 35px 0;
-  margin-top: 30px;
-}
-
 .btn-primary {
   background: royalblue;
   border: none;
