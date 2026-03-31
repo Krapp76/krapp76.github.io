@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: whitesmoke;
+    color: darkslategray;
+    line-height: 1.6;
+}
+.header-section {
+    background: linear-gradient(135deg, midnightblue 0%, darkslateblue 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.header-section h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.header-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 40px;
+    transition: all 0.3s;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.toc-section {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid gainsboro;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.toc-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-section a {
+    color: midnightblue;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.toc-section a:hover {
+    background: midnightblue;
+    color: white;
+}
+
+.container-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.section-block {
+    margin-bottom: 60px;
+    scroll-margin-top: 90px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: midnightblue;
+    border-left: 5px solid royalblue;
+    padding-left: 20px;
+}
+.code-block {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    border-left: 4px solid royalblue;
+}
+
+.code-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid gainsboro;
+}
+.support-block {
+    background: linear-gradient(135deg, #e8f0fe, white);
+    border-left: 5px solid royalblue;
+    padding: 25px;
+    border-radius: 16px;
+    margin: 40px 0;
+}
+
+.support-block h3 {
+    color: midnightblue;
+    margin-bottom: 15px;
+}
+.image-placeholder {
+    background: #e9ecef;
+    border: 2px dashed #adb5bd;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+    color: #6c757d;
+}
+
+.image-placeholder p {
+    margin: 0;
+    font-style: italic;
+}
+.resource-link {
+    color: royalblue;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+.info-card ul, .support-block ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.info-card li, .support-block li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .toc-section ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .header-section h1 {
+        font-size: 2rem;
+    }
+    
+    .container-content {
+        padding: 30px 15px;
+    }
+    
+    .code-block {
+        font-size: 12px;
+        padding: 15px;
+    }
+}
