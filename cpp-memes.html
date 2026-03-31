@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Мемы и Инсайты | Доклад Антона Соснина</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="cpp-memes.css">
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="container">
+            <h1>C++: Где Указатели Указывают на Мемы</h1>
+            <p>Элитная подборка мемов и инсайтов о C++ из доклада Антона Соснина</p>
+            <p class="mt-3"><strong>Докладчик:</strong> Антон Соснин | <strong>Событие:</strong> C++ Russia</p>
+            <a href="index.html" class="back-link">← Вернуться на главную</a>
+        </div>
+    </div>
+
+    <div class="toc-section">
+        <div class="container">
+            <ul>
+                <li><a href="#overview">Введение</a></li>
+                <li><a href="#where-cpp">Где нужен C++</a></li>
+                <li><a href="#standard">Стандарт языка</a></li>
+                <li><a href="#ub">Неопределённое поведение</a></li>
+                <li><a href="#memory">Память и указатели</a></li>
+                <li><a href="#ecosystem">Экосистема и инструменты</a></li>
+                <li><a href="#libraries">Библиотеки и фреймворки</a></li>
+                <li><a href="#support">Поддержка и ресурсы</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-content">
+        <div id="overview" class="section-block">
+            <h2 class="section-title">Введение: Особый склад ума C++</h2>
+            <div class="info-card">
+                <p><strong>Антон Соснин</strong>, главный редактор Telegram-канала IT Today, представляет элитную подборку мемов и инсайтов о C++. Доклад сочетает юмор с практическими наблюдениями о том, почему C++ остаётся актуальным, несмотря на свою легендарную сложность.</p>
+                <p class="mt-3"><strong>Главная мысль:</strong> C++ не умирает — он эволюционирует через сложный процесс стандартизации, используется везде — от игровых движков до операционных систем, и его экосистема богаче, чем когда-либо.</p>
+                <p class="mt-3"><em>"Доклад с одной стороны лёгкий, с другой стороны рассказывает простые, но не очевидные вещи. Будет весело и полезно."</em> — Егор Суворов</p>
+            </div>
+            <div class="image-placeholder">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Антон Соснин выступает на C++ Russia — вставьте фото здесь</p>
+            </div>
+        </div>
+
+        <!-- ГДЕ НУЖЕН C++ -->
+        <div id="where-cpp" class="section-block">
+            <h2 class="section-title">Где же нужен C++?</h2>
+            <div class="info-card">
+                <p>C++ остаётся незаменимым в нескольких ключевых областях:</p>
+                <ul>
+                    <li><strong>Большая кодовая база</strong> — крупные компании с миллиардными инвестициями в C++ код</li>
+                    <li><strong>Экосистема зависимостей</strong> — FFmpeg, TensorFlow, PyTorch, математические библиотеки, которые сложно заменить</li>
+                    <li><strong>Производительность критична</strong> — видеоигры, высокочастотный трейдинг, автопилоты, где время — деньги или безопасность</li>
+                    <li><strong>Близость к железу</strong> — ядра операционных систем, встраиваемые системы, специфическое оборудование</li>
+                    <li><strong>Когда есть только компилятор C++</strong> — для специализированных железок других компиляторов просто нет</li>
+                </ul>
+                <p class="mt-3"><em>"Все браузеры написаны на C++"</em> — Firefox, Chrome, все основные движки.</p>
+            </div>
+            <div class="code-block">
+                <pre>
+// Пример высокопроизводительного трейдингового движка
+class TradingEngine {
+public:
+    void process_order(const Order&amp; order) noexcept {
+        // Микросекунды имеют значение — прямой доступ к памяти
+        auto* slot = order_book_.find(order.symbol);
+        if (slot) slot->execute(order);
+    }
+private:
+    OrderBook order_book_;
+};</pre>
+            </div>
+            <div class="image-placeholder">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Где используется C++" — логотипы браузеров, игровые движки, терминалы трейдинга</p>
+            </div>
+        </div>
+
+        <div id="standard" class="section-block">
+            <h2 class="section-title">Стандарт C++: 1800-страничный зверь</h2>
+            <div class="info-card">
+                <p>C++ — один из немногих языков с <strong>международным стандартом ISO</strong>. Последняя редакция превышает <strong>1800 страниц</strong>. Это даёт как мощь, так и сложность:</p>
+                <ul>
+                    <li>Официальный стандарт стоит ~200 долларов, но бесплатные черновики доступны и почти идентичны</li>
+                    <li>Ни один компилятор не реализует стандарт на 100%</li>
+                    <li>Предложение фичи занимает <strong>от полугода до 3-6 лет</strong></li>
+                    <li>Для сравнения: в Elixir можно предложить фичу или исправить баг за недели</li>
+                </ul>
+                <p class="mt-3"><em>"Комитет по стандартизации решает проблемы с помощью неопределённого поведения"</em> — известный мем про C++.</p>
+                <p class="mt-2">В России можно обратиться к <strong>Антону Полухину</strong> за помощью с предложениями в стандарт.</p>
+            </div>
+            <div class="code-block">
+                <pre>
+// Сложность стандарта: метапрограммирование на шаблонах
+template&lt;typename T&gt;
+struct is_pointer : std::false_type {};
+
+template&lt;typename T&gt;
+struct is_pointer&lt;T*&gt; : std::true_type {};
+
+// Использование
+static_assert(is_pointer&lt;int*&gt;::value);     // true
+static_assert(!is_pointer&lt;int&gt;::value);    // false</pre>
+            </div>
+            <div class="image-placeholder">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Заседание комитета по стандартизации C++" — люди спорят над бумагами</p>
+            </div>
+        </div>
+        <div id="ub" class="section-block">
+            <h2 class="section-title">Неопределённое поведение: Тёмное искусство</h2>
+            <div class="info-card">
+                <p>Неопределённое поведение (UB) — краеугольный камень C++. Оно позволяет компиляторам агрессивно оптимизировать, но возлагает ответственность на программиста.</p>
+                <p><strong>Ключевые инсайты:</strong></p>
+                <ul>
+                    <li>UB существует, потому что описать все граничные случаи сделало бы стандарт невозможным</li>
+                    <li><em>"Компилятор не выполняет программу — он компилирует. Результат компиляции вполне определён."</em></li>
+                    <li>Документирование UB в ваших API — легитимный подход для производительного кода</li>
+                    <li><strong>Дима Свиридкин</strong> пишет отличные заметки о неопределённом поведении — обязательный ресурс к прочтению</li>
+                </ul>
+            </div>
+            <div class="code-block">
+                <pre>
+// Классическое UB: переполнение знакового целого
+int add(int a, int b) {
+    // Если a + b превышает INT_MAX, поведение не определено
+    return a + b;
+}
+
+// Лучше: задокументировать контракт
+/// @brief Складывает два целых числа
+/// @pre a + b не должно вызывать переполнение
+/// @behavior не определено при переполнении
+int add_checked(int a, int b) {
+    assert(a <= INT_MAX - b);
+    return a + b;
+}</pre>
+            </div>
+            <div class="image-placeholder">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "C++ программисты и неопределённое поведение" — указывают на чёрную дыру</p>
+            </div>
+        </div>
+        <div id="memory" class="section-block">
+            <h2 class="section-title">Память: Где указатели указывают на звёзды</h2>
+            <div class="info-card">
+                <p>Управление памятью определяет идентичность C++. Знаменитая "звёздочка" — символ указателя — стала иконой:</p>
+                <ul>
+                    <li><strong>Segmentation fault</strong> — обращение к несуществующему адресу, программа падает (это лучше, чем продолжать работу с UB)</li>
+                    <li>Современный C++ предлагает умные указатели, но сырые указатели остаются повсеместно</li>
+                    <li>Ручное управление памятью даёт производительность, но требует дисциплины</li>
+                </ul>
+                <p class="mt-3"><em>"Раньше учили C++ за 21 день. Теперь предлагают учить за 100 секунд!"</em> — сатира на обещания быстрого обучения.</p>
+            </div>
+            <div class="code-block">
+                <pre>
+// Сырые указатели: сила с ответственностью
+int* create_array(size_t size) {
+    int* arr = new int[size];  // Ручное выделение
+    // Не забудьте delete[] потом!
+    return arr;
+}
+
+// Современный C++: умные указатели
+auto safe_array = std::make_unique&lt;int[]&gt;(100);
+// Освобождается автоматически</pre>
+            </div>
+            <div class="image-placeholder">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Указатели C++" — три звёздочки (***) как созвездие в лигатурном шрифте</p>
+            </div>
+        </div>
+        <div id="ecosystem" class="section-block">
+            <h2 class="section-title">Экосистема C++: Компиляторы, сборка, пакетные менеджеры</h2>
+            <div class="info-card">
+                <p><strong>Компиляторы:</strong> MSVC (Windows), GCC/Clang (Linux/macOS). Операционная система обычно выбирает компилятор за вас — скорее компилятор выбирает программиста, а не наоборот.</p>
+                <p><strong>Системы сборки:</strong> CMake — стандарт де-факто (хоть и сложный). Make, Bazel, Buck тоже существуют.</p>
+                <p><strong>Пакетные менеджеры:</strong> Conan (на Python, гибкий), vcpkg (Microsoft), системные пакетные менеджеры (apt, brew).</p>
+                <p><strong>Отладчики:</strong> Visual Studio Debugger, GDB, LLDB, Xcode.</p>
+                <p class="mt-3"><em>"Если вы до сих пор не написали свой пакетный менеджер — напишите, там делов-то на два выходных!"</em> (шутка, но с долей правды)</p>
+            </div>
+            <div class="code-block">
+                <pre>
+# CMakeLists.txt пример
+cmake_minimum_required(VERSION 3.20)
+project(MyApp LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(fmt REQUIRED)
+find_package(OpenSSL REQUIRED)
+
+add_executable(my_app main.cpp)
+target_link_libraries(my_app fmt::fmt OpenSSL::SSL)</pre>
+            </div>
+            <div class="image-placeholder">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Сложность CMake" — спагетти из зависимостей</p>
+            </div>
+        </div>
+        <div id="libraries" class="section-block">
+            <h2 class="section-title">Важные библиотеки C++</h2>
+            <div class="info-card">
+                <p><strong>Boost</strong> — "вторая стандартная библиотека" (используйте осторожно — потом будете рефакторить)</p>
+                <p><strong>Qt</strong> — кросс-платформенный фреймворк для GUI, практически единственный зрелый выбор для сложных приложений</p>
+                <p><strong>FFmpeg</strong> — универсальная молотилка для мультимедиа (видео, аудио, стриминг)</p>
+                <p><strong>OpenSSL</strong> — криптография и SSL/TLS (если видели шифрование на сайте — скорее всего это OpenSSL)</p>
+                <p><strong>SQLite</strong> — встраиваемая база данных, а ещё мощная консольная утилита для анализа данных (местами мощнее Excel)</p>
+                <p><strong>Google Test</strong> — фреймворк для юнит-тестирования</p>
+                <p><strong>OpenCV</strong> — компьютерное зрение (первый шаг в эту область)</p>
+                <p><strong>TensorFlow / PyTorch</strong> — машинное обучение с C++ бэкендами</p>
+                <p><strong>SDL2 / SFML</strong> — создание окон и обработка мультимедиа (клавиатура, мышь, геймпады)</p>
+                <p class="mt-3"><em>"Awesome C++" на GitHub — отличный репозиторий с библиотеками. Можете добавить туда свою!</em></p>
+            </div>
+            <div class="code-block">
+                <pre>
+// Использование SQLite для анализа данных
+#include &lt;sqlite3.h&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    sqlite3* db;
+    sqlite3_open("data.db", &db);
+    
+    const char* sql = "SELECT name, value FROM metrics ORDER BY value DESC LIMIT 10";
+    sqlite3_exec(db, sql, [](void*, int, char** data, char**) -> int {
+        std::cout &lt;&lt; data[0] &lt;&lt; ": " &lt;&lt; data[1] &lt;&lt; '\n';
+        return 0;
+    }, nullptr, nullptr);
+    
+    sqlite3_close(db);
+}</pre>
+            </div>
+            <div class="image-placeholder">
+                <p>[МЕСТО ДЛЯ КАРТИНКИ] Мем: "Как произносить Qt?" — дебаты о произношении</p>
+            </div>
+        </div>
+
+        <div id="support" class="support-block">
+            <h3> Поддержка и полезные ресурсы</h3>
+            <p><strong>Где искать помощь:</strong></p>
+            <ul>
+                <li><strong>Черновики стандарта C++:</strong> Бесплатно доступны на <a href="https://eel.is/c++draft/" class="resource-link" target="_blank">eel.is/c++draft/</a> — практически идентичны официальному стандарту</li>
+                <li><strong>Заметки о неопределённом поведении:</strong> Отличная коллекция Дмитрия Свиридкина — ссылка будет в слайдах доклада</li>
+                <li><strong>Русскоязычное C++ сообщество:</strong> Антон Полухин может помочь с предложениями в стандарт</li>
+                <li><strong>Awesome C++:</strong> GitHub-репозиторий с курируемым списком библиотек (<a href="https://github.com/fffaraz/awesome-cpp" class="resource-link" target="_blank">github.com/fffaraz/awesome-cpp</a>)</li>
+                <li><strong>Материалы конференции:</strong> Слайды и видеозаписи C++ Russia доступны на сайте конференции</li>
+            </ul>
+            <p class="mt-3"><strong>Рекомендуемые книги:</strong> Скотт Мейерс, Николай Йосуттис, Бьёрн Страуструп — классика, которая не стареет.</p>
+            <p class="mt-2"><em>"Хороший программист может научиться писать код в стиле C++ на любом языке за три недели. А нужно ли для этого сначала выучить этот язык?"</em></p>
+            <p class="mt-2"><strong>Ссылка на доклад:</strong> Полная видеозапись доступна на канале C++ Russia. Оцените доклад на сайте под видео!</p>
+        </div>
+
+    </div>
+</body>
+</html>
