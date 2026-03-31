@@ -6,345 +6,129 @@
     <title>Беркович Денис | Веб-разработчик и студент</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fc;
-            color: #1e2a3e;
-            line-height: 1.5;
-        }
-        .section-padding {
-            padding: 80px 0;
-        }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-            letter-spacing: -0.5px;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #06b6d4);
-            border-radius: 4px;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .avatar-lg {
-            width: 260px;
-            height: 260px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.3);
-            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .avatar-lg:hover {
-            transform: scale(1.02);
-        }
-
-        .hero-name {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .skill-card, .hobby-card {
-            background: white;
-            border-radius: 24px;
-            padding: 1.8rem 1.5rem;
-            transition: all 0.25s ease;
-            height: 100%;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-
-        .skill-card:hover, .hobby-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
-            border-color: #e2e8f0;
-        }
-
-        .skill-icon {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .game-grid-modern {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.8rem;
-            justify-content: center;
-        }
-
-        .game-card {
-            background: white;
-            border-radius: 28px;
-            overflow: hidden;
-            width: 180px;
-            text-align: center;
-            transition: all 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border: 1px solid #eef2ff;
-        }
-
-        .game-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.2);
-        }
-
-        .game-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-bottom: 2px solid #eef2ff;
-        }
-
-        .game-title {
-            font-weight: 700;
-            padding: 12px 8px;
-            background: white;
-            font-size: 1.1rem;
-        }
-
-        .movie-list-custom {
-            background: white;
-            border-radius: 28px;
-            padding: 1.8rem;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-            height: 100%;
-            border: 1px solid #eef2ff;
-        }
-
-        .movie-list-custom h4 {
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            border-left: 5px solid #3b82f6;
-            padding-left: 1rem;
-        }
-
-        .styled-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .styled-list li {
-            margin-bottom: 12px;
-            padding-left: 1.8rem;
-            position: relative;
-        }
-
-        .styled-list li:before {
-            content: "🎬";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #3b82f6;
-        }
-
-        .ordered-list-custom {
-            padding-left: 1.5rem;
-        }
-
-        .ordered-list-custom li {
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .edu-timeline {
-            background: white;
-            border-radius: 28px;
-            padding: 1.8rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .badge-soft {
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .footer-custom {
-            background: #0f172a;
-            color: #cbd5e1;
-            padding: 35px 0;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 50px 0;
-            }
-            .hero-name {
-                font-size: 2rem;
-            }
-            .avatar-lg {
-                width: 200px;
-                height: 200px;
-            }
-            .section-title {
-                font-size: 1.9rem;
-            }
-            .game-card {
-                width: 150px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<section class="hero-section">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-5 text-center text-md-start">
-                <img src="https://sobakovod.club/uploads/posts/2021-12/1639738461_12-sobakovod-club-p-sobaki-kitaiskaya-khokhlataya-s-yazikom-13.jpg" 
-                     alt="Фото веб-разработчика" class="avatar-lg mb-3">
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-5 text-center text-md-start">
+                    <img src="https://sobakovod.club/uploads/posts/2021-12/1639738461_12-sobakovod-club-p-sobaki-kitaiskaya-khokhlataya-s-yazikom-13.jpg" 
+                         alt="Фото веб-разработчика" class="avatar-lg mb-3">
+                </div>
+                <div class="col-md-7">
+                    <h1 class="hero-name">Беркович Денис</h1>
+                    <p class="lead fs-5 opacity-90">
+                        Привет! Я студент 3 курса, увлеченный веб-разработкой, современными технологиями и созданием удобных интерфейсов. 
+                        Постоянно изучаю новое, чтобы совершенствоваться.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-js me-1"></i> JavaScript</span>
+                        <span class="badge bg-light text-dark p-2 px-3"><i class="fas fa-microchip me-1"></i> Assembly</span>
+                        <span class="badge bg-light text-dark p-2 px-3"><i class="fas fa-code me-1"></i> C++</span>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-7">
-                <h1 class="hero-name">Беркович Денис</h1>
-                <p class="lead fs-5 opacity-90">
-                    Привет! Я студент 3 курса, увлеченный веб-разработкой, современными технологиями и созданием удобных интерфейсов. 
-                    Постоянно изучаю новое, чтобы совершенствоваться.
-                </p>
-                <div class="d-flex flex-wrap gap-3 mt-4">
-                    <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-js me-1"></i> JavaScript</span>
-                    <span class="badge bg-light text-dark p-2 px-3"><i class="fas fa-microchip me-1"></i> Assembly</span>
-                    <span class="badge bg-light text-dark p-2 px-3"><i class="fas fa-code me-1"></i> C++</span>
+        </div>
+    </section>
+    <div class="container section-padding" id="student-life">
+        <div class="row g-5">
+            <div class="col-lg-12">
+                <h2 class="section-title">Студенческая жизнь</h2>
+                <div class="edu-timeline mt-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                        <h3 class="fs-4 fw-bold">ЯФ МФЮА</h3>
+                    </div>
+                    <p class="mb-2"><strong>Направление:</strong> Прикладная информатика в экономике</p>
+                    <p>Активно участвую в жизни университета. За время обучения освоил основы алгоритмов, веб-технологий, баз данных. На 3 курсе занимаюсь интернет программированием и 1С.</p>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<div class="container section-padding" id="student-life">
-    <div class="row g-5">
-        <div class="col-lg-12">
-            <h2 class="section-title">📖 Студенческая жизнь</h2>
-            <div class="edu-timeline mt-4">
-                <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
-                    <h3 class="fs-4 fw-bold">ЯФ МФЮА</h3>
-                    <span class="badge-soft"><i class="far fa-calendar-alt me-1"></i> 2023 — н.в.</span>
+    <div class="container section-padding pt-0" id="games">
+        <h2 class="section-title">Любимые видеоигры</h2>
+        <p class="text-secondary mb-4">В свободное время погружаюсь в атмосферные миры. Игры — отличный способ отдохнуть и потренировать реакцию.</p>
+        <div class="game-grid-modern">
+            <div class="game-card">
+                <img src="https://gamesliked.com/wp-content/uploads/2024/09/ar2soc.jpg" class="game-img" alt="Stalker">
+                <div class="game-title">Stalker</div>
+            </div>
+            <div class="game-card">
+                <img src="https://gamebomb.ru/files/galleries/001/c/c1/410415.jpg" class="game-img" alt="Atomic Heart">
+                <div class="game-title">Atomic Heart</div>
+            </div>
+            <div class="game-card">
+                <img src="https://newcdn.igromania.ru/mnt/news/d/4/c/c/a/7/119544/html/more/1080_0213392fa5a8b9fa1cb_1920xH.jpg" class="game-img" alt="The Last of Us">
+                <div class="game-title">The Last of Us</div>
+            </div>
+            <div class="game-card">
+                <img src="https://img.goodfon.ru/wallpaper/big/a/a5/gta-gta-v-gta-5-rockstar-game-5652.webp" class="game-img" alt="GTA">
+                <div class="game-title">GTA</div>
+            </div>
+            <div class="game-card">
+                <img src="https://storage.yandexcloud.net/igm-s3/PROD/202408/46247b1a/Metro_2033_Redux.png" class="game-img" alt="Metro 2033">
+                <div class="game-title">Metro 2033</div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.pinimg.com/736x/c8/14/2d/c8142d0c3e14a2bca83c03342a3a3983.jpg" class="game-img" alt="Mortal Kombat">
+                <div class="game-title">Mortal Kombat</div>
+            </div>
+        </div>
+    </div>
+    <div class="container section-padding pt-0" id="movies">
+        <h2 class="section-title">Киноподборка и сериалы</h2>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6">
+                <div class="movie-list-custom">
+                    <h4><i class="fas fa-star-of-life me-2 text-warning"></i> Топ-5 любимых фильмов</h4>
+                    <ol class="ordered-list-custom fs-6">
+                        <li><strong>Интерстеллар</strong> — величие космоса и эмоции</li>
+                        <li><strong>Конец Света</strong> — захватывающий сюжет</li>
+                        <li><strong>Зеленая книга</strong> — душевная драма</li>
+                        <li><strong>Волк с Уолл-стрит</strong> — энергия и драйв</li>
+                        <li><strong>Оппенгеймер</strong> — история гениального ученого</li>
+                    </ol>
                 </div>
-                <p class="mb-2"><strong>Направление:</strong> Прикладная информатика в экономике</p>
-                <p>Активно участвую в жизни университета. За время обучения освоил основы алгоритмов, веб-технологий, баз данных. На 3 курсе занимаюсь интернет программированием и базами данных.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="movie-list-custom">
+                    <h4><i class="fas fa-tv me-2 text-info"></i> Сериалы и киновселенные</h4>
+                    <ul class="styled-list">
+                        <li><strong>Игра престолов</strong> — эпическая сага</li>
+                        <li><strong>Во все тяжкие</strong> — лучшая драма всех времен</li>
+                        <li><strong>Стражи Галактики</strong> — юмор и приключения в космосе</li>
+                        <li><strong>Мстители</strong> — культовая команда супергероев</li>
+                        <li><strong>Человек-паук</strong> — любимый супергерой</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container section-padding pt-0" id="games">
-    <h2 class="section-title">🎮 Любимые видеоигры</h2>
-    <p class="text-secondary mb-4">В свободное время погружаюсь в атмосферные миры. Игры — отличный способ отдохнуть и потренировать реакцию.</p>
-    <div class="game-grid-modern">
-        <div class="game-card">
-            <img src="https://gamesliked.com/wp-content/uploads/2024/09/ar2soc.jpg" class="game-img" alt="Stalker">
-            <div class="game-title">Stalker</div>
-        </div>
-        <div class="game-card">
-            <img src="https://gamebomb.ru/files/galleries/001/c/c1/410415.jpg" class="game-img" alt="Atomic Heart">
-            <div class="game-title">Atomic Heart</div>
-        </div>
-        <div class="game-card">
-            <img src="https://newcdn.igromania.ru/mnt/news/d/4/c/c/a/7/119544/html/more/1080_0213392fa5a8b9fa1cb_1920xH.jpg" class="game-img" alt="The Last of Us">
-            <div class="game-title">The Last of Us</div>
-        </div>
-        <div class="game-card">
-            <img src="https://img.goodfon.ru/wallpaper/big/a/a5/gta-gta-v-gta-5-rockstar-game-5652.webp" class="game-img" alt="GTA">
-            <div class="game-title">GTA</div>
-        </div>
-        <div class="game-card">
-            <img src="https://storage.yandexcloud.net/igm-s3/PROD/202408/46247b1a/Metro_2033_Redux.png" class="game-img" alt="Metro 2033">
-            <div class="game-title">Metro 2033</div>
-        </div>
-        <div class="game-card">
-            <img src="https://i.pinimg.com/736x/c8/14/2d/c8142d0c3e14a2bca83c03342a3a3983.jpg" class="game-img" alt="Mortal Kombat">
-            <div class="game-title">Mortal Kombat</div>
-        </div>
-    </div>
-</div>
-<div class="container section-padding pt-0" id="movies">
-    <h2 class="section-title">🎬 Киноподборка и сериалы</h2>
-    <div class="row g-4 mt-2">
-        <div class="col-md-6">
-            <div class="movie-list-custom">
-                <h4><i class="fas fa-star-of-life me-2 text-warning"></i> Топ-5 любимых фильмов</h4>
-                <ol class="ordered-list-custom fs-6">
-                    <li><strong>Интерстеллар</strong> — величие космоса и эмоции</li>
-                    <li><strong>Конец Света</strong> — захватывающий сюжет</li>
-                    <li><strong>Зеленая книга</strong> — душевная драма</li>
-                    <li><strong>Волк с Уолл-стрит</strong> — энергия и драйв</li>
-                    <li><strong>Оппенгеймер</strong> — история гениального ученого</li>
-                </ol>
+    <div class="container section-padding pt-0" id="hobbies">
+        <h2 class="section-title">Увлечения и навыки</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="hobby-card">
+                    <div class="skill-icon"><i class="fas fa-water"></i></div>
+                    <h4>Каякинг</h4>
+                    <p>Обожаю водные походы на байдарках. Летом часто выбираюсь на сплавы по рекам, наслаждаюсь природой и активным отдыхом.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="movie-list-custom">
-                <h4><i class="fas fa-tv me-2 text-info"></i> Сериалы и киновселенные</h4>
-                <ul class="styled-list">
-                    <li><strong>Игра престолов</strong> — эпическая сага</li>
-                    <li><strong>Во все тяжкие</strong> — лучшая драма всех времен</li>
-                    <li><strong>Стражи Галактики</strong> — юмор и приключения в космосе</li>
-                    <li><strong>Мстители</strong> — культовая команда супергероев</li>
-                    <li><strong>Человек-паук</strong> — любимый супергерой</li>
-                </ul>
+            <div class="col-md-6">
+                <div class="hobby-card">
+                    <div class="skill-icon"><i class="fas fa-snowboarding"></i></div>
+                    <h4>Сноубординг</h4>
+                    <p>Зимой катаюсь на сноуборде. Люблю скорость, свежий воздух и горные склоны. Постоянно совершенствую технику.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="hobby-card">
+                    <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+                    <h4>Видеоигры на консоли</h4>
+                    <p>Обожаю играть на PlayStation. Прохожу сюжетные игры, ценю атмосферу и глубокие истории. Отличный способ расслабиться после учебы.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container section-padding pt-0" id="hobbies">
-    <h2 class="section-title">🧩 Увлечения и навыки</h2>
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="hobby-card">
-                <div class="skill-icon"><i class="fas fa-water"></i></div>
-                <h4>Каякинг</h4>
-                <p>Обожаю водные походы на байдарках. Летом часто выбираюсь на сплавы по рекам, наслаждаюсь природой и активным отдыхом.</p>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="hobby-card">
-                <div class="skill-icon"><i class="fas fa-snowboarding"></i></div>
-                <h4>Сноубординг</h4>
-                <p>Зимой катаюсь на сноуборде. Люблю скорость, свежий воздух и горные склоны. Постоянно совершенствую технику.</p>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="hobby-card">
-                <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
-                <h4>Видеоигры на консоли</h4>
-                <p>Обожаю играть на PlayStation. Прохожу сюжетные игры, ценю атмосферу и глубокие истории. Отличный способ расслабиться после учебы.</p>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="hobby-card">
-                <div class="skill-icon"><i class="fas fa-book-open"></i></div>
-                <h4>Техническая литература</h4>
-                <p>Читаю книги по архитектуре ПО, clean code, дизайну интерфейсов. В планах — изучить TypeScript и Next.js.</p>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>
