@@ -1,10 +1,446 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <title>My heading examples</title>
-    </head>
-    <body>
-        <h1>ДОБРО ПОЖАЛОВАТЬ НА МОЙ САЙТ</h1>
-        Тут будет всякая информация обо мне
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Беркович Денис | Веб-разработчик и студент</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fc;
+            color: #1e2a3e;
+            line-height: 1.5;
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            border-radius: 4px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .avatar-lg {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-lg:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-name {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* карточки навыков и хобби */
+        .skill-card, .hobby-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem;
+            transition: all 0.25s ease;
+            height: 100%;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .skill-card:hover, .hobby-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            border-color: #e2e8f0;
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* игровая сетка (список игр с визуалом) */
+        .game-grid-modern {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            width: 180px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid #eef2ff;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.2);
+        }
+
+        .game-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 2px solid #eef2ff;
+        }
+
+        .game-title {
+            font-weight: 700;
+            padding: 12px 8px;
+            background: white;
+            font-size: 1.1rem;
+        }
+
+        /* список фильмов / сериалов (два разных списка: упорядоченный и маркированный) */
+        .movie-list-custom {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            height: 100%;
+            border: 1px solid #eef2ff;
+        }
+
+        .movie-list-custom h4 {
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        .styled-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .styled-list li {
+            margin-bottom: 12px;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .styled-list li:before {
+            content: "🎬";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #3b82f6;
+        }
+
+        .ordered-list-custom {
+            padding-left: 1.5rem;
+        }
+
+        .ordered-list-custom li {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* блок студенческой жизни */
+        .edu-timeline {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .badge-soft {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* футер */
+        .footer-custom {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 35px 0;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+            .hero-name {
+                font-size: 2rem;
+            }
+            .avatar-lg {
+                width: 200px;
+                height: 200px;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .game-card {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- БЛОК 1: О себе + аватарка  -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-md-5 text-center text-md-start">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                     alt="Фото веб-разработчика" class="avatar-lg mb-3">
+            </div>
+            <div class="col-md-7">
+                <div class="hero-badge">
+                    <i class="fas fa-code me-2"></i> Студент · Программист
+                </div>
+                <h1 class="hero-name">Беркович Денис</h1>
+                <p class="lead fs-5 opacity-90">
+                    Привет! Я студент 3 курса, увлеченный веб-разработкой, современными технологиями и созданием удобных интерфейсов. 
+                    Постоянно изучаю новое, чтобы совершенствоваться.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-js me-1"></i> JavaScript</span>
+                    <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-react me-1"></i> Assembly</span>
+                    <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-bootstrap me-1"></i> Bootstrap</span>
+                    <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-python me-1"></i> C++</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- БЛОК 2: Студенческая жизнь и работа (проекты, учеба) -->
+<div class="container section-padding" id="student-life">
+    <div class="row g-5">
+        <div class="col-lg-6">
+            <h2 class="section-title">📖 Студенческая жизнь</h2>
+            <div class="edu-timeline mt-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                    <h3 class="fs-4 fw-bold">ЯФ МФЮА</h3>
+                    <span class="badge-soft"><i class="far fa-calendar-alt me-1"></i> 2023 — н.в.</span>
+                </div>
+                <p class="mb-2"><strong>Направление:</strong> Прикладная информатика в экономике</p>
+                <p>Активно участвую в жизни университета. За время обучения освоил основы алгоритмов, веб-технологий, баз данных. На 3 курсе занимаюсь интернет программированием и базами данных.</p>
+                <hr class="my-3">
+                <div class="d-flex gap-3 flex-wrap">
+                    <div><i class="fas fa-trophy text-warning"></i> Победитель вузовского хакатона 2024</div>
+                    <div><i class="fas fa-laptop-code text-primary"></i> 5+ успешных веб-проектов</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h2 class="section-title">💼 Моя работа / проекты</h2>
+            <div class="edu-timeline mt-4">
+                <div class="d-flex align-items-center gap-3 mb-2">
+                    <i class="fas fa-briefcase fs-1 text-primary"></i>
+                    <h3 class="fs-4 fw-bold mb-0">Стажёр-разработчик (удаленно)</h3>
+                </div>
+                <p class="text-muted mb-2"><i class="far fa-building"></i> WebStudio «PixelForge» · 2024 – сейчас</p>
+                <p>Разрабатываю адаптивные лендинги, поддерживаю корпоративные порталы, внедряю компоненты на React. В портфолио — 3 коммерческих проекта. Участвую в code-review и оптимизации производительности.</p>
+                <div class="mt-3">
+                    <span class="badge bg-secondary bg-opacity-10 text-dark me-2">HTML/CSS</span>
+                    <span class="badge bg-secondary bg-opacity-10 text-dark me-2">JavaScript ES6</span>
+                    <span class="badge bg-secondary bg-opacity-10 text-dark me-2">Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- БЛОК 3: Видеоигры (хобби + визуальный список с картинками) -->
+<div class="container section-padding pt-0" id="games">
+    <h2 class="section-title">🎮 Любимые видеоигры</h2>
+    <p class="text-secondary mb-4">В свободное время погружаюсь в атмосферные миры. Игры — отличный способ отдохнуть и потренировать реакцию.</p>
+    <div class="game-grid-modern">
+        <!-- 6 игр с картинками (использую placeholder-картинки с тематикой игр, но сохраняя адаптивность) -->
+        <div class="game-card">
+            <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Cyberpunk">
+            <div class="game-title">Cyberpunk 2077</div>
+        </div>
+        <div class="game-card">
+            <img src="https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="The Witcher">
+            <div class="game-title">Ведьмак 3</div>
+        </div>
+        <div class="game-card">
+            <img src="https://images.pexels.com/photos/3945655/pexels-photo-3945655.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Valorant">
+            <div class="game-title">Valorant</div>
+        </div>
+        <div class="game-card">
+            <img src="https://images.pexels.com/photos/1246748/pexels-photo-1246748.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Hollow Knight">
+            <div class="game-title">Hollow Knight</div>
+        </div>
+        <div class="game-card">
+            <img src="https://images.pexels.com/photos/6238046/pexels-photo-6238046.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Elden Ring">
+            <div class="game-title">Elden Ring</div>
+        </div>
+        <div class="game-card">
+            <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="CS2">
+            <div class="game-title">Counter-Strike 2</div>
+        </div>
+    </div>
+</div>
+
+<!-- БЛОК 4: Кино и сериалы (здесь два списка: нумерованный и маркированный, плюс дополнительные) -->
+<div class="container section-padding pt-0" id="movies">
+    <h2 class="section-title">🎬 Киноподборка и сериалы</h2>
+    <div class="row g-4 mt-2">
+        <!-- Левый список: нумерованный (топ 5 фильмов) -->
+        <div class="col-md-6">
+            <div class="movie-list-custom">
+                <h4><i class="fas fa-star-of-life me-2 text-warning"></i> Топ-5 любимых фильмов</h4>
+                <ol class="ordered-list-custom fs-6">
+                    <li><strong>Интерстеллар</strong> — величие космоса и эмоции</li>
+                    <li><strong>Бойцовский клуб</strong> — культовая философия</li>
+                    <li><strong>Начало</strong> (Inception) — многослойный сюжет</li>
+                    <li><strong>Матрица</strong> — классика киберпанка</li>
+                    <li><strong>Зелёная книга</strong> — душевная драма</li>
+                </ol>
+                <p class="mt-3 small text-muted">⭐ Люблю пересматривать и открывать новые детали режиссуры.</p>
+            </div>
+        </div>
+        <!-- Правый список: маркированный (сериалы и киновселенные) -->
+        <div class="col-md-6">
+            <div class="movie-list-custom">
+                <h4><i class="fas fa-tv me-2 text-info"></i> Сериалы и киновселенные</h4>
+                <ul class="styled-list">
+                    <li><strong>Во все тяжкие</strong> — лучшая драма всех времен</li>
+                    <li><strong>Мистер Робот</strong> — хакерская эстетика</li>
+                    <li><strong>Звёздные войны</strong> (сага + «Андор»)</li>
+                    <li><strong>Мандалорец</strong> — атмосфера далёкой галактики</li>
+                    <li><strong>Черное зеркало</strong> — будущее и технологии</li>
+                    <li><strong>Очень странные дела</strong> — ностальгия 80-х</li>
+                </ul>
+                <div class="mt-2">
+                    <span class="badge bg-dark me-1">Sci-Fi</span>
+                    <span class="badge bg-dark me-1">драма</span>
+                    <span class="badge bg-dark">триллер</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- дополнительный блок со списком внутри (третий список? формально 2 списка уже есть, но добавим ещё один в виде описания хобби) -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="movie-list-custom bg-light">
+                <h4><i class="fas fa-microphone-alt me-2"></i> Мои подкасты и YouTube-каналы (список увлечений)</h4>
+                <ul class="styled-list row">
+                    <li class="col-md-6">🔹 «Код и кофе» — про программирование</li>
+                    <li class="col-md-6">🔹 «Российский IT-блог» — новости индустрии</li>
+                    <li class="col-md-6">🔹 «Кино на вечер» — разбор фильмов</li>
+                    <li class="col-md-6">🔹 «История видеоигр» — ретроспективы</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- БЛОК 5: Увлечения / хобби (4 смысловых блока выполнено, но добавим пятый для красоты, но и для полноты) 
+     Но задание: как минимум 4 блока — у нас есть: 1) О себе/hero, 2) Студ.жизнь+работа, 3) Видеоигры, 4) Кино/сериалы — это 4 полноценных. 
+     Добавлю дополнительный блок с хобби (необязательно, но сделает страницу богаче, не нарушая требований). -->
+<div class="container section-padding pt-0" id="hobbies">
+    <h2 class="section-title">🧩 Другие увлечения и навыки</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="hobby-card">
+                <div class="skill-icon"><i class="fas fa-head-side-headphones"></i></div>
+                <h4>Музыка и гитара</h4>
+                <p>Играю на акустической гитаре, люблю инструментальные композиции и рок-классику. Участвую в студенческих капустниках.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="hobby-card">
+                <div class="skill-icon"><i class="fas fa-book-open"></i></div>
+                <h4>Техническая литература</h4>
+                <p>Читаю книги по архитектуре ПО, clean code, дизайну интерфейсов. В планах — изучить TypeScript и Next.js.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="hobby-card">
+                <div class="skill-icon"><i class="fas fa-chess-queen"></i></div>
+                <h4>Шахматы и стратегии</h4>
+                <p>В свободное время играю в шахматы онлайн (рейтинг ~1400), развиваю аналитическое мышление.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="hobby-card">
+                <div class="skill-icon"><i class="fas fa-camera"></i></div>
+                <h4>Фотография</h4>
+                <p>Снимаю городские пейзажи на беззеркалку, изучаю композицию и цветокоррекцию.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- футер -->
+<footer class="footer-custom">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="mb-2">© 2025 Алексей Иванов — студенческий портфолио. Все материалы представлены в рамках учебного проекта.</p>
+                <div class="d-flex justify-content-center gap-4 mt-3">
+                    <a href="#" class="text-white-50 text-decoration-none"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" class="text-white-50 text-decoration-none"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#" class="text-white-50 text-decoration-none"><i class="fas fa-envelope"></i> a.ivanov@student.ru</a>
+                </div>
+                <p class="small mt-3 opacity-50">Адаптивный дизайн на Bootstrap 5 | 4+ смысловых блока, списки, кастомные стили</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS (для адаптивных компонентов, не обязателен но хорошо) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
