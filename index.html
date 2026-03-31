@@ -67,16 +67,6 @@
             margin-bottom: 1rem;
         }
 
-        .hero-badge {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(4px);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
         .skill-card, .hobby-card {
             background: white;
             border-radius: 24px;
@@ -227,8 +217,6 @@
     </style>
 </head>
 <body>
-
-<!-- БЛОК 1: О себе + аватарка -->
 <section class="hero-section">
     <div class="container">
         <div class="row align-items-center g-5">
@@ -237,9 +225,6 @@
                      alt="Фото веб-разработчика" class="avatar-lg mb-3">
             </div>
             <div class="col-md-7">
-                <div class="hero-badge">
-                    <i class="fas fa-code me-2"></i> Студент · Программист
-                </div>
                 <h1 class="hero-name">Беркович Денис</h1>
                 <p class="lead fs-5 opacity-90">
                     Привет! Я студент 3 курса, увлеченный веб-разработкой, современными технологиями и созданием удобных интерфейсов. 
@@ -248,14 +233,12 @@
                 <div class="d-flex flex-wrap gap-3 mt-4">
                     <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-js me-1"></i> JavaScript</span>
                     <span class="badge bg-light text-dark p-2 px-3"><i class="fas fa-microchip me-1"></i> Assembly</span>
-                    <span class="badge bg-light text-dark p-2 px-3"><i class="fab fa-python me-1"></i> C++</span>
+                    <span class="badge bg-light text-dark p-2 px-3"><i class="fas fa-code me-1"></i> C++</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- БЛОК 2: Студенческая жизнь -->
 <div class="container section-padding" id="student-life">
     <div class="row g-5">
         <div class="col-lg-12">
@@ -271,44 +254,39 @@
         </div>
     </div>
 </div>
-
-<!-- БЛОК 3: Видеоигры -->
 <div class="container section-padding pt-0" id="games">
     <h2 class="section-title">🎮 Любимые видеоигры</h2>
     <p class="text-secondary mb-4">В свободное время погружаюсь в атмосферные миры. Игры — отличный способ отдохнуть и потренировать реакцию.</p>
     <div class="game-grid-modern">
         <div class="game-card">
-            <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Stalker">
+            <img src="https://gamesliked.com/wp-content/uploads/2024/09/ar2soc.jpg" class="game-img" alt="Stalker">
             <div class="game-title">Stalker</div>
         </div>
         <div class="game-card">
-            <img src="https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Atomic Heart">
+            <img src="https://gamebomb.ru/files/galleries/001/c/c1/410415.jpg" class="game-img" alt="Atomic Heart">
             <div class="game-title">Atomic Heart</div>
         </div>
         <div class="game-card">
-            <img src="https://images.pexels.com/photos/3945655/pexels-photo-3945655.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="The Last of Us">
+            <img src="https://newcdn.igromania.ru/mnt/news/d/4/c/c/a/7/119544/html/more/1080_0213392fa5a8b9fa1cb_1920xH.jpg" class="game-img" alt="The Last of Us">
             <div class="game-title">The Last of Us</div>
         </div>
         <div class="game-card">
-            <img src="https://images.pexels.com/photos/1246748/pexels-photo-1246748.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="GTA">
-            <div class="game-title">GTA 5</div>
+            <img src="https://img.goodfon.ru/wallpaper/big/a/a5/gta-gta-v-gta-5-rockstar-game-5652.webp" class="game-img" alt="GTA">
+            <div class="game-title">GTA</div>
         </div>
         <div class="game-card">
-            <img src="https://images.pexels.com/photos/6238046/pexels-photo-6238046.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Metro 2033">
+            <img src="https://storage.yandexcloud.net/igm-s3/PROD/202408/46247b1a/Metro_2033_Redux.png" class="game-img" alt="Metro 2033">
             <div class="game-title">Metro 2033</div>
         </div>
         <div class="game-card">
-            <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" class="game-img" alt="Mortal Kombat">
+            <img src="https://i.pinimg.com/736x/c8/14/2d/c8142d0c3e14a2bca83c03342a3a3983.jpg" class="game-img" alt="Mortal Kombat">
             <div class="game-title">Mortal Kombat</div>
         </div>
     </div>
 </div>
-
-<!-- БЛОК 4: Кино и сериалы -->
 <div class="container section-padding pt-0" id="movies">
     <h2 class="section-title">🎬 Киноподборка и сериалы</h2>
     <div class="row g-4 mt-2">
-        <!-- Левый список: нумерованный (топ 5 фильмов) -->
         <div class="col-md-6">
             <div class="movie-list-custom">
                 <h4><i class="fas fa-star-of-life me-2 text-warning"></i> Топ-5 любимых фильмов</h4>
@@ -319,10 +297,8 @@
                     <li><strong>Волк с Уолл-стрит</strong> — энергия и драйв</li>
                     <li><strong>Оппенгеймер</strong> — история гениального ученого</li>
                 </ol>
-                <p class="mt-3 small text-muted">⭐ Люблю пересматривать и открывать новые детали режиссуры.</p>
             </div>
         </div>
-        <!-- Правый список: маркированный (сериалы и киновселенные) -->
         <div class="col-md-6">
             <div class="movie-list-custom">
                 <h4><i class="fas fa-tv me-2 text-info"></i> Сериалы и киновселенные</h4>
@@ -333,17 +309,10 @@
                     <li><strong>Мстители</strong> — культовая команда супергероев</li>
                     <li><strong>Человек-паук</strong> — любимый супергерой</li>
                 </ul>
-                <div class="mt-2">
-                    <span class="badge bg-dark me-1">Sci-Fi</span>
-                    <span class="badge bg-dark me-1">драма</span>
-                    <span class="badge bg-dark">боевик</span>
-                </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- БЛОК 5: Увлечения и навыки -->
 <div class="container section-padding pt-0" id="hobbies">
     <h2 class="section-title">🧩 Увлечения и навыки</h2>
     <div class="row g-4">
@@ -368,6 +337,14 @@
                 <p>Обожаю играть на PlayStation. Прохожу сюжетные игры, ценю атмосферу и глубокие истории. Отличный способ расслабиться после учебы.</p>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="hobby-card">
+                <div class="skill-icon"><i class="fas fa-book-open"></i></div>
+                <h4>Техническая литература</h4>
+                <p>Читаю книги по архитектуре ПО, clean code, дизайну интерфейсов. В планах — изучить TypeScript и Next.js.</p>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
