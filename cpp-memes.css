@@ -43,13 +43,10 @@ body {
     background: rgba(255, 255, 255, 0.3);
     color: white;
 }
-
 .toc-section {
     background: white;
     padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    border-bottom: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -77,27 +74,15 @@ body {
     color: white;
 }
 
-.intro-fixed {
-    background: whitesmoke;
-    padding: 40px 0 20px 0;
-    position: sticky;
-    top: 70px;
-    z-index: 90;
-    border-bottom: none;
-}
-
 .container-content {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 30px 20px 50px 20px;
-    position: relative;
-    z-index: 1;
-    background: whitesmoke;
+    padding: 40px 20px 50px 20px;
 }
 
 .section-block {
     margin-bottom: 60px;
-    scroll-margin-top: 180px;
+    scroll-margin-top: 20px;
 }
 
 .section-title {
@@ -108,6 +93,7 @@ body {
     padding-left: 0;
     border-left: none;
 }
+
 .code-block {
     background: #1e1e1e;
     color: #d4d4d4;
@@ -126,7 +112,6 @@ body {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
-
 .info-card {
     background: white;
     border-radius: 20px;
@@ -135,6 +120,7 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     border: none;
 }
+
 .image-placeholder {
     background: #e9ecef;
     border: 2px dashed #adb5bd;
@@ -150,7 +136,6 @@ body {
     font-style: italic;
 }
 
-}
 .video-link-block {
     margin: 40px 0;
     padding: 20px;
@@ -169,7 +154,6 @@ body {
 .video-url:hover {
     text-decoration: underline;
 }
-
 .info-card ul {
     padding-left: 20px;
     margin-top: 10px;
@@ -195,7 +179,7 @@ body {
     }
     
     .container-content {
-        padding: 20px 15px 40px 15px;
+        padding: 30px 15px 40px 15px;
     }
     
     .code-block {
@@ -203,13 +187,7 @@ body {
         padding: 15px;
     }
     
-    .intro-fixed {
-        top: auto;
-        position: relative;
-        padding: 30px 0 10px 0;
-    }
-    
     .section-block {
-        scroll-margin-top: 20px;
+        scroll-margin-top: 10px;
     }
 }
