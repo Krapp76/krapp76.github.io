@@ -11,7 +11,7 @@
     font-weight: 700;
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
-    border-bottom: 3px solid rgba(25, 25, 112, 1);
+    border-bottom: none;
     display: inline-block;
     color: rgba(44, 62, 80, 1);
 }
