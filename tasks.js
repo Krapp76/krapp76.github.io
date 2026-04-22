@@ -1,4 +1,3 @@
-
 let clickCount = 0;
 const phrases = ["Доброе утро!", "Добрый день!", "Добрый вечер!"];
 let phraseIndex = 0;
@@ -13,7 +12,6 @@ clickCounterBtn.addEventListener("click", () => {
     clickCounterBtn.textContent = `Кликов: ${clickCount}`;
 });
 
-
 const textBlocks = {
     text1: document.getElementById("text1"),
     text2: document.getElementById("text2"),
@@ -22,11 +20,6 @@ const textBlocks = {
 
 const singleButtons = document.querySelectorAll(".toggle-single-btn");
 const toggleAllBtn = document.getElementById("toggleAllBtn");
-
-function updateSingleButtonText(paragraphId, button) {
-    const isHidden = textBlocks[paragraphId].style.display === "none";
-    button.textContent = isHidden ? "Показать" : "Скрыть";
-}
 
 function updateToggleAllButton() {
     const allHidden = Object.values(textBlocks).every(p => p.style.display === "none");
@@ -80,21 +73,13 @@ toggleAllBtn.addEventListener("click", () => {
     }
 });
 
-
-const palette = [
-    "rgba(255, 107, 107, 0.85)",
-    "rgba(78, 205, 196, 0.85)",
-    "rgba(69, 183, 209, 0.85)",
-    "rgba(150, 206, 180, 0.85)",
-    "rgba(255, 234, 167, 0.85)",
-    "rgba(221, 160, 221, 0.85)",
-    "rgba(243, 156, 18, 0.85)",
-    "rgba(231, 76, 60, 0.85)",
-    "rgba(46, 204, 113, 0.85)",
-    "rgba(155, 89, 182, 0.85)",
-    "rgba(26, 188, 156, 0.85)",
-    "rgba(230, 126, 34, 0.85)"
-];
+function getRandomRgba() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const a = (Math.random() * 0.5 + 0.5).toFixed(2);
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
 
 const squares = [
     document.getElementById("square1"),
@@ -107,13 +92,9 @@ const squares = [
 const randomColorsBtn = document.getElementById("randomColorsBtn");
 const resetColorsBtn = document.getElementById("resetColorsBtn");
 
-function getRandomColor() {
-    return palette[Math.floor(Math.random() * palette.length)];
-}
-
 randomColorsBtn.addEventListener("click", () => {
     squares.forEach(square => {
-        square.style.backgroundColor = getRandomColor();
+        square.style.backgroundColor = getRandomRgba();
     });
 });
 
@@ -122,7 +103,6 @@ resetColorsBtn.addEventListener("click", () => {
         square.style.backgroundColor = "rgba(255, 255, 255, 1)";
     });
 });
-
 
 const stateBox = document.getElementById("stateBox");
 const cycleBoxBtn = document.getElementById("cycleBoxBtn");
