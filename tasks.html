@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript задания</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tasks.css">
+</head>
+<body>
+    <div class="container py-4">
+        <div class="mb-4">
+            <a href="index.html" class="doc-link">← Назад на главную</a>
+        </div>
+
+        <h1 class="text-center mb-5" style="color: midnightblue;">JavaScript</h1>
+
+        <div class="task-card mb-5" id="task1">
+            <h2 class="task-title">Задание 1. Циклическое приветствие</h2>
+            <div class="task-content text-center">
+                <h1 id="greetingHeader" class="display-4 mb-4">Доброе утро!</h1>
+                <button id="clickCounterBtn" class="btn btn-primary btn-lg">Кликов: 0</button>
+            </div>
+        </div>
+
+        <div class="task-card mb-5" id="task2">
+            <h2 class="task-title">Задание 2. Скрытие/показ абзацев</h2>
+            <div class="task-content">
+                <div class="paragraph-container mb-3 p-3 border rounded">
+                    <p class="text-block" id="text1">Абзац 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="toggle-single-btn btn btn-sm btn-outline-primary" data-target="text1">Скрыть</button>
+                </div>
+                <div class="paragraph-container mb-3 p-3 border rounded">
+                    <p class="text-block" id="text2">Абзац 2: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button class="toggle-single-btn btn btn-sm btn-outline-primary" data-target="text2">Скрыть</button>
+                </div>
+                <div class="paragraph-container mb-3 p-3 border rounded">
+                    <p class="text-block" id="text3">Абзац 3: Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                    <button class="toggle-single-btn btn btn-sm btn-outline-primary" data-target="text3">Скрыть</button>
+                </div>
+                <div class="text-center mt-4">
+                    <button id="toggleAllBtn" class="btn btn-warning btn-lg">Скрыть всё</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-card mb-5" id="task3">
+            <h2 class="task-title">Задание 3. Случайные цвета квадратов</h2>
+            <div class="task-content text-center">
+                <div class="squares-container d-flex justify-content-center gap-3 flex-wrap mb-4">
+                    <div class="square" id="square1"></div>
+                    <div class="square" id="square2"></div>
+                    <div class="square" id="square3"></div>
+                    <div class="square" id="square4"></div>
+                    <div class="square" id="square5"></div>
+                </div>
+                <div class="d-flex justify-content-center gap-3">
+                    <button id="randomColorsBtn" class="btn btn-success btn-lg">Случайные цвета</button>
+                    <button id="resetColorsBtn" class="btn btn-secondary btn-lg">Сброс</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-card mb-5" id="task4">
+            <h2 class="task-title">Задание 4. Циклическая смена классов квадрата</h2>
+            <div class="task-content text-center">
+                <div id="stateBox" class="box"></div>
+                <button id="cycleBoxBtn" class="btn btn-info btn-lg mt-4">Стандарт</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="tasks.js"></script>
+</body>
+</html>
